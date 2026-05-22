@@ -1,6 +1,7 @@
 package com.project.weather.services;
 
 import com.project.weather.dto.CidadeIbgeDTO;
+import com.project.weather.exceptions.UfNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
@@ -33,7 +34,7 @@ public class IbgeService {
 
         } catch (HttpClientErrorException.NotFound e) {
 
-            throw new RuntimeException("UF não encontrado");
+            throw new UfNotFoundException(uf);
 
         }
 

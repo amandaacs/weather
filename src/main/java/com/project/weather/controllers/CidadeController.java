@@ -1,5 +1,6 @@
 package com.project.weather.controllers;
 
+import com.project.weather.exceptions.InvalidUfException;
 import com.project.weather.services.IbgeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +26,7 @@ public class CidadeController {
                                         @RequestParam(defaultValue = "10") int limite) {
 
         if(sigla_uf.length() != 2){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of(
-                    "erro", true,
-                    "codigo", "SIGLA_UF_INVALIDA",
-                    "mensagem", "A sigla do estado deve conter exatamente 2 letras",
-                    "uf_informado", sigla_uf
-            ));
+            throw new InvalidUfException(sigla_uf);
         }
 
         try {
