@@ -1,16 +1,15 @@
 package com.project.weather.exceptions;
 
-public class InvalidUfException extends RuntimeException{
+public class InvalidUfException extends RuntimeException {
 
-    private final String invalidUf;
+    private final String stateCode;
 
-    public InvalidUfException(String invalidUf) {
-        super("A sigla do estado deve conter exatamente 2 letras");
-        this.invalidUf = invalidUf;
+    public InvalidUfException(String stateCode) {
+        super("Invalid state code: " + stateCode);
+        this.stateCode = stateCode;
     }
 
-    public String getInvalidUf() {
-        return invalidUf;
+    public String getStateCode() {
+        return stateCode;
     }
-
 }
