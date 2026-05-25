@@ -1,0 +1,128 @@
+{
+  "info": {
+    "_postman_id": "weather-api-n703",
+    "name": "Weather API - N703",
+    "description": "Coleção Postman para a API de Agregação de Dados Climáticos e Geográficos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "health"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Fortaleza",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/clima/Fortaleza",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "clima", "Fortaleza"]
+        }
+      }
+    },
+    {
+      "name": "Clima - São Paulo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/clima/São Paulo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "clima", "São Paulo"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Cidade não encontrada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/clima/CidadeInexistente",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "clima", "CidadeInexistente"]
+        }
+      }
+    },
+    {
+      "name": "Clima - Nome inválido",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/clima/X",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "clima", "X"]
+        }
+      }
+    },
+    {
+      "name": "Cidades por UF - CE",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/cidades/CE?limite=5",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "cidades", "CE"],
+          "query": [
+            {
+              "key": "limite",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cidades - UF não encontrada",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/cidades/XX",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "cidades", "XX"]
+        }
+      }
+    },
+    {
+      "name": "Cidades - Sigla UF inválida",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/v1/cidades/ceara",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "v1", "cidades", "ceara"]
+        }
+      }
+    }
+  ]
+}
